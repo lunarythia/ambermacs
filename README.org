@@ -4,7 +4,7 @@
 
 * Instructions
 
-Install [[https://github.com/plexus/chemacs2][Chemacs2]] to ~~/.emacs.d~, then write the following to ~~/.emacs-profiles~:
+Install [[https://github.com/plexus/chemacs2][Chemacs2]] to =~/.emacs.d=, then write the following to =~/.emacs-profiles=:
 #+begin_src emacs-lisp :tangle no
 
   (("default" . ((user-emacs-directory . "/path/to/this/repo"))))
