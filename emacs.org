@@ -1,6 +1,6 @@
 #+title: AmberWing’s Configuration
 #+author: AmberWing
-#+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs.amberwing.d/init.el :makedirp yes
+#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :makedirp yes
 
 * Instructions
 
@@ -92,7 +92,7 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
 ** Amb’ria
 
-#+begin_src emacs-lisp :tangle ~/.emacs.amberwing.d/ambria-theme.el
+#+begin_src emacs-lisp :tangle ./ambria-theme.el
 
   (unless (package-installed-p 'autothemer)
     (package-refresh-contents)
@@ -173,7 +173,7 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
 ** Amb’ria light
 
-#+begin_src emacs-lisp :tangle ~/.emacs.amberwing.d/ambria-light-theme.el
+#+begin_src emacs-lisp :tangle ./ambria-light-theme.el
 
   (unless (package-installed-p 'autothemer)
     (package-refresh-contents)
@@ -329,7 +329,7 @@ Use Doom themes
 
 #+begin_src emacs-lisp
 
-  (setq custom-theme-directory "~/.emacs.amberwing.d")
+  (setq custom-theme-directory ".")
 
   (use-package doom-themes
     :config
