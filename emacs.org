@@ -992,7 +992,7 @@ This gives us vim-like stuff
 #+begin_src emacs-lisp
 
   (defun aw/config () (interactive)
-         (find-file (expand-file-name "emacs.org" emacs user-emacs-directory)))
+         (find-file (expand-file-name "emacs.org" user-emacs-directory)))
 
   (defun aw/scale () (interactive)
          (if (derived-mode-p 'pdf-view-mode)
