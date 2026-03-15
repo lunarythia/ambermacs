@@ -992,7 +992,7 @@ This gives us vim-like stuff
 #+begin_src emacs-lisp
 
   (defun aw/config () (interactive)
-         (find-file (expand-file-name "emacs.org" user-emacs-directory)))
+         (find-file (expand-file-name "README.org" user-emacs-directory)))
 
   (defun aw/scale () (interactive)
          (if (derived-mode-p 'pdf-view-mode)
@@ -1187,7 +1187,7 @@ This will automatically tangle the config
 
   (defun aw/org-babel-tangle-config ()
     (when (string-equal (buffer-file-name)
-                        (expand-file-name "emacs.org" user-emacs-directory))
+                        (expand-file-name "README.org" user-emacs-directory))
 
       (let ((org-confirm-babel-evaluate nil))
         (org-babel-tangle))))
