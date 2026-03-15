@@ -342,7 +342,11 @@ This section makes sure that it’s actually able to do stuff with the code in t
   (tool-bar-mode -1)     ; disable toolbar
   (tooltip-mode -1)      ; disable tooltips
   (set-fringe-mode 10)   ; a bit more room
-  (menu-bar-mode -1)     ; disable menubar
+
+  ;; disable menubar except on macOS
+  ;; because it's less obtrusive
+  (when (not (eq system-type 'darwin))
+    (menu-bar-mode -1))
   (scroll-bar-mode -1)   ; disable scrollbar
 
                                           ; Word wrapping
