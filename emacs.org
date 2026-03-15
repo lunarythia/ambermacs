@@ -4,7 +4,15 @@
 
 * Instructions
 
-If this is the first time, you may have to run ~M-x org-babel-tangle~ to have it actually run. After that, saving the file /should/ automatically tangle it.
+Install [[https://github.com/plexus/chemacs2][Chemacs2]] to ~~/.emacs.d~, then write the following to ~~/.emacs-profiles~:
+#+begin_src emacs-lisp :tangle no
+
+  (("default" . ((user-emacs-directory . "/path/to/this/repo"))))
+
+#+end_src
+
+Open this file in Emacs and run run ~M-x org-babel-tangle~, then restart Emacs.  In the future, saving the file /should/ automatically tangle it.
+
 If something goes wrong with installing packages, you may have to manually do ~M-x package-install RET [insert name of package]~.
 
 In addition, you will need to install the package ~nerd-icons~ and run ~M-x nerd-icons-install-fonts~.
