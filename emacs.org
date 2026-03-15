@@ -15,7 +15,7 @@ Open this file in Emacs and run run ~M-x org-babel-tangle~, then restart Emacs. 
 
 If something goes wrong with installing packages, you may have to manually do ~M-x package-install RET [insert name of package]~.
 
-In addition, you will need to install the package ~nerd-icons~ and run ~M-x nerd-icons-install-fonts~.
+In addition, you may need to install the package ~nerd-icons~ and run ~M-x nerd-icons-install-fonts~.
 
 On macOS it is necessary to ~brew install coreutils~.
 
