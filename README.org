@@ -1087,6 +1087,8 @@ This gives us vim-like stuff
       "e" '(aw/config :which-key "config")
 
       "g" '(magit-status :which-key "git")
+
+      "p" '(projectile-command-map :which-key "project")
       )
 
     (aw/leadkey
