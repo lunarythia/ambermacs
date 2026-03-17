@@ -1024,7 +1024,7 @@ Treemacs gives us a project file view.
     :config
     (which-key-mode)
     (setq which-key-idle-delay 0))
-
+  
 #+end_src
 
 ** Evil mode
