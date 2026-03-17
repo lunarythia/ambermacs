@@ -831,6 +831,17 @@ This gives us intellisense
 
 #+end_src
 
+** Projectile
+
+#+begin_src emacs-lisp
+
+  (use-package projectile
+    :custom
+    (projectile-auto-cleanup-known-projects t)
+    :config (projectile-mode))
+
+#+end_src
+
 ** lsp-mode
 
 lsp-mode allows us to have IDE-like features inside emacs.
