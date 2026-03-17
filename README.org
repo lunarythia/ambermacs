@@ -1104,7 +1104,7 @@ This gives us vim-like stuff
     (aw/leadkey
       :infix "f"
       "" '(:which-key "file")
-      "d" '(dired-jump :which-key dired)
+      "d" '(dired-jump :which-key "directory")
       "f" '(find-file :which-key "open file")
       "s" '(save-buffer :which-key "save buffer"))
 
