@@ -1062,8 +1062,8 @@ This gives us vim-like stuff
 
   (defun aw/scale () (interactive)
          (if (derived-mode-p 'pdf-view-mode)
-  	   (hydra-pdf-scale/body)
-  	 (hydra-text-scale/body)))
+        	   (hydra-pdf-scale/body)
+        	 (hydra-text-scale/body)))
 
   ;; rebind keys
   (use-package general
