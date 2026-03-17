@@ -1051,6 +1051,21 @@ This gives us vim-like stuff
     :config
     (evil-collection-init))
 
+  ;; Use relative line numbers when in normal, visual mode;
+  ;; absolute when in insert mode or when using evil-ex (:command)
+  (setq display-line-numbers-type 'relative)
+  (add-hook 'evil-normal-state-entry-hook (lambda () (setq display-line-numbers 'relative)))
+  (add-hook 'evil-visual-state-entry-hook (lambda () (setq display-line-numbers 'relative)))
+  (add-hook 'evil-insert-state-entry-hook (lambda () (setq display-line-numbers t)))
+  (advice-add 'evil-ex :before
+              (lambda (&rest _)
+  	      (setq aw/prev-display-line-numbers display-line-numbers)
+  	      (setq display-line-numbers t)))
+  (add-hook 'minibuffer-exit-hook (lambda ()
+  				  (let ((target-buffer (window-buffer (minibuffer-selected-window))))
+  				    (with-current-buffer target-buffer
+  				      (setq display-line-numbers aw/prev-display-line-numbers)))))
+
 #+end_src
 
 ** General
@@ -1071,9 +1086,11 @@ This gives us vim-like stuff
     :config
     (general-create-definer aw/leadkey
       :keymaps 'override
-      :states '(normal motion emacs)
-      :prefix "SPC"
-      :global-prefix "C-a")
+      :prefix "C-a")
+    (general-def
+      :keymaps 'override
+      :states '(normal motion visual) "SPC"
+      (general-simulate-key "C-a"))
     (aw/leadkey
       "" 'nil
       "SPC" '(counsel-M-x :which-key "command")
