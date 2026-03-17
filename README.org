@@ -1054,9 +1054,15 @@ This gives us vim-like stuff
   ;; Use relative line numbers when in normal, visual mode;
   ;; absolute when in insert mode or when using evil-ex (:command)
   (setq display-line-numbers-type 'relative)
-  (add-hook 'evil-normal-state-entry-hook (lambda () (setq display-line-numbers 'relative)))
-  (add-hook 'evil-visual-state-entry-hook (lambda () (setq display-line-numbers 'relative)))
-  (add-hook 'evil-insert-state-entry-hook (lambda () (setq display-line-numbers t)))
+  (add-hook 'evil-normal-state-entry-hook (lambda ()
+  					  (when display-line-numbers
+  					    (setq display-line-numbers 'relative))))
+  (add-hook 'evil-visual-state-entry-hook (lambda ()
+  					  (when display-line-numbers
+  					    (setq display-line-numbers 'relative))))
+  (add-hook 'evil-insert-state-entry-hook (lambda ()
+  					  (when display-line-numbers
+  					    (setq display-line-numbers t))))
   (advice-add 'evil-ex :before
               (lambda (&rest _)
   	      (setq aw/prev-display-line-numbers display-line-numbers)
