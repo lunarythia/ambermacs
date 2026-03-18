@@ -1066,7 +1066,7 @@ This gives us vim-like stuff
   (advice-add 'evil-ex :before
               (lambda (&rest _)
   	      (setq aw/prev-display-line-numbers display-line-numbers)
-  	      (setq display-line-numbers t)))
+  	      (when display-line-numbers (setq display-line-numbers t))))
   (add-hook 'minibuffer-exit-hook (lambda ()
   				  (let ((target-buffer (window-buffer (minibuffer-selected-window))))
   				    (with-current-buffer target-buffer
