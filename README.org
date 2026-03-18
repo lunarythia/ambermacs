@@ -1287,6 +1287,22 @@ This will automatically tangle the config
 
 #+end_src
 
+* Fcitx5
+
+Make Emacs work with ~fcitx5~ on Linux.  You should also install ~emacs-wayland~.
+
+#+begin_src emacs-lisp
+
+  (when (executable-find "fcitx5")
+   (use-package fcitx
+     :ensure t
+     :config
+     (setq fcitx-use-dbus 'fcitx5)
+     (setq fcitx-remote-command "fcitx5-remote")
+     (fcitx-default-setup)))
+
+#+end_src
+
 * Performance (2)
 
 #+begin_src emacs-lisp
