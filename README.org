@@ -869,13 +869,8 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+begin_src emacs-lisp
 
-  (use-package web-mode
-    :mode ("\\.html\\'" "\\.css\\'" "\\.js\\'")
-    :hook (web-mode . lsp-deferred))
-
-  (use-package scss-mode
-    :mode "\\.scss\\'"
-    :hook (scss-mode . lsp-deferred))
+  (add-hook 'c-mode-hook 'lsp)
+  (add-hook 'c++-mode-hook 'lsp)
 
 #+end_src
 
@@ -883,8 +878,15 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+begin_src emacs-lisp
 
-  (add-hook 'c-mode-hook 'lsp)
-  (add-hook 'c++-mode-hook 'lsp)
+  (use-package web-mode
+    :mode ("\\.html\\'" "\\.css\\'" "\\.js\\'" "\\.njk\\'")
+    :hook (web-mode . lsp-deferred)
+    :custom
+    (web-mode-css-indent-offset 2))
+
+  (use-package scss-mode
+    :mode "\\.scss\\'"
+    :hook (scss-mode . lsp-deferred))
 
 #+end_src
 
