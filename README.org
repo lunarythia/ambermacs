@@ -890,6 +890,16 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+end_src
 
+**** Lua
+
+#+begin_src emacs-lisp
+
+  (use-package lua-mode
+  :mode ("\\.lua\\'")
+  :hook (lua-mode . lsp-deferred))
+
+#+end_src
+
 **** LaTeX
 # 
 #+begin_src emacs-lisp
