@@ -616,6 +616,7 @@ File management.
     :commands dired dired-jump
     :config
     (setq dired-kill-when-opening-new-dired-buffer t)
+    (setq dired-auto-revert-buffer t)
     :custom ((dired-listing-switches "-Alo --group-directories-first")
              (dired-dwim-target t)))
 
@@ -1243,9 +1244,9 @@ This gives us vim-like stuff
     (general-define-key
      :states 'motion
      :keymaps 'dired-mode-map
-     "h" 'dired-single-up-directory
-     "l" 'dired-single-buffer
-     "RET" 'dired-single-buffer)
+     "h" 'dired-up-directory
+     "l" 'dired-find-file
+     "RET" 'dired-find-file)
 
     ;; Ivy-specific bindings
     (general-define-key
