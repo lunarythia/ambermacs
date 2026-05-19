@@ -105,14 +105,6 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
 #+end_src
 
-** Performance? maybe?
-
-#+begin_src emacs-lisp
-
-  (setq gc-cons-threshold (* 100 1000 1000))
-
-#+end_src
-
 ** Symlinks
 
 #+begin_src emacs-lisp
@@ -1321,11 +1313,18 @@ Make Emacs work with ~fcitx5~ on Linux.  You should also install ~emacs-wayland~
 
 #+end_src
 
-* Performance (2)
+* Performance
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle ./early-init.el
 
-  (setq gc-cons-threshold (* 2 1000 1000))
+  ;; from https://www.reddit.com/r/emacs/comments/1jtja9s/comment/mlw3q7o/
+  
+  (defun restore-gc-cons-threshold ()
+    (setq gc-cons-threshold (* 16 1024 1024)
+  	gc-cons-percentage 0.1))
 
+  (setq gc-cons-threshold most-positive-fixnum
+        gc-cons-percentage 0.6)
+  (add-hook 'emacs-startup-hook #'restore-gc-cons-threshold 105)
+    
 #+end_src
-
