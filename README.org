@@ -913,6 +913,15 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+end_src
 
+**** Nix
+
+#+begin_src emacs-lisp
+
+  (use-package nix-mode
+    :mode "\\.nix\\'")
+
+#+end_src
+
 *** lsp-ui
 
 #+begin_src emacs-lisp
