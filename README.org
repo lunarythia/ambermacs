@@ -918,7 +918,8 @@ lsp-mode allows us to have IDE-like features inside emacs.
 #+begin_src emacs-lisp
 
   (use-package nix-mode
-    :mode "\\.nix\\'")
+    :mode "\\.nix\\'"
+    :hook (nix-mode . lsp-deferred))
 
 #+end_src
 
