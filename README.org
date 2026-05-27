@@ -92,6 +92,13 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
       (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))))
 
+  (use-package exec-path-from-shell
+    :ensure t
+    :if (memq window-system '(mac ns))
+    :config
+    (when (memq window-system '(mac ns))
+      (exec-path-from-shell-initialize)))
+
 #+end_src
 
 * Misc
