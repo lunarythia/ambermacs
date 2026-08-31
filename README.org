@@ -894,6 +894,13 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+end_src
 
+**** KDL
+#+begin_src emacs-lisp
+
+  (use-package kdl-mode)
+
+#+end_src
+
 **** Lua
 
 #+begin_src emacs-lisp
