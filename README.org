@@ -80,6 +80,7 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
 #+begin_src emacs-lisp
 
+;; -*- lexical-binding: t; -*-
   (with-eval-after-load 'org
     (org-babel-do-load-languages
      'org-babel-load-languages
@@ -156,7 +157,8 @@ This section makes sure that it’s actually able to do stuff with the code in t
 
 #+begin_src emacs-lisp :tangle ./ambria-theme.el
 
-  (unless (package-installed-p 'autothemer)
+ ;; -*- lexical-binding: t; -*-
+ (unless (package-installed-p 'autothemer)
     (package-refresh-contents)
     (package-install 'autothemer))
 
@@ -1359,6 +1361,7 @@ Make Emacs work with ~fcitx5~ on Linux.  You should also install ~emacs-wayland~
 
 #+begin_src emacs-lisp :tangle ./early-init.el
 
+ ;; -*- lexical-binding: t; -*-
   ;; from https://www.reddit.com/r/emacs/comments/1jtja9s/comment/mlw3q7o/
   
   (defun restore-gc-cons-threshold ()
