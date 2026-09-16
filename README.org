@@ -72,7 +72,15 @@ If something goes wrong with installing packages, you may have to manually do ~M
 
 In addition, you may need to install the package ~nerd-icons~ and run ~M-x nerd-icons-install-fonts~.
 
-On macOS it is necessary to ~brew install coreutils~.
+On macOS it is necessary either to ~brew install coreutils~ or with Nix, add ~coreutils-prefixed~ to your packages list
+#+begin_src nix
+
+  environment.systemPackages = with pkgs;
+    [
+      coreutils-prefixed
+    ];
+
+#+end_src
 
 * Setup
 
@@ -626,9 +634,9 @@ File management.
              (dired-dwim-target t)))
 
   ;; Because macOS does not recongise the switch --group-directories-first
-  ;; brew install coreutils is required
+  ;; Install coreutils via Homebrew or coreutils-prefixed via Nix.
   (when (eq system-type 'darwin)
-    (setq insert-directory-program "/opt/homebrew/bin/gls"))
+    (setq insert-directory-program "gls"))
 
 #+end_src
 
