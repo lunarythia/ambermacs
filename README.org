@@ -949,6 +949,15 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
 #+end_src
 
+**** Rust
+#+begin_src emacs-lisp
+
+  (use-package rust-mode
+    :mode "\\.rs\\'"
+    :hook (rust-mode . lsp-deferred))
+
+#+end_src
+
 *** lsp-ui
 
 #+begin_src emacs-lisp
