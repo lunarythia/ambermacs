@@ -889,6 +889,7 @@ lsp-mode allows us to have IDE-like features inside emacs.
     (setq lsp-keymap-prefix "C-c l")
     :config
     (lsp-enable-which-key-integration t)
+    (setq lsp-inlay-hint-enable t)
     (setq lsp-clients-typescript-tls-path "~/.nvm/versions/node/v17.3.0/bin/typescript-language-server"))
 
 #+end_src
@@ -966,7 +967,9 @@ lsp-mode allows us to have IDE-like features inside emacs.
 
   (use-package rust-mode
     :mode "\\.rs\\'"
-    :hook (rust-mode . lsp-deferred))
+    :hook (rust-mode . lsp-deferred)
+    :custom
+    (lsp-rust-analyzer-display-parameter-hints t))
 
 #+end_src
 
